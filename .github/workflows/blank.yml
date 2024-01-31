@@ -4,12 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       RECOVERY:
-      description: 'Choice '
-      type: choice
-      options:
-      - test
-      - tes123
-
+        description: 'Choice '
+        type: choice
+        options:
+          - test
+          - tes123
 
 jobs:
   build:
@@ -27,9 +26,9 @@ jobs:
       
       - name: test
         run: |
-          if [ "${{ github.event.inputs.RECOVERY }}" == "test"];
-            echo ini dari test input
+          if [ "${{ github.event.inputs.RECOVERY }}" == "test" ]; then
+            echo "ini dari test input"
           else
-            echo gagal
+            echo "gagal"
           fi
-    
+
