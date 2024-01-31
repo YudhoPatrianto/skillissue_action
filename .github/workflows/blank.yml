@@ -1,10 +1,10 @@
-name: Build 
+name: Build Recovery By YudhoPRJKT
 
 on:
   workflow_dispatch:
     inputs:
       RECOVERY:
-        description: 'Select the custom recovery you want '
+        description: 'Choice '
         type: choice
         options:
           - test
@@ -20,20 +20,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: as
+      - name: Handle Choice
         run: |
-          if [ "${{ github.event.inputs.RECOVERY }}" == "test" ]; then
-            echo "ini dari test input"
-
-          else
-            echo "gagal"
-          fi
-
-          if [ "${{ github.event.inputs.RECOVERY }}" == "tes123" ]; then
-            echo "ini dari test input"
-            
-          else
-            echo "gagal"
-          fi
-
-
+          case "${{ github.event.inputs.RECOVERY }}" in
+            "test")
+              echo "ini dari test input"
+              ;;
+            "tes123")
+              echo "ini dari tes123 input"
+              ;;
+            *)
+              echo "gagal"
+              ;;
+          esac
