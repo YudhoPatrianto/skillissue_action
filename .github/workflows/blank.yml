@@ -25,9 +25,15 @@ jobs:
           if [ "${{ github.event.inputs.RECOVERY }}" == "test" ]; then
             echo "ini dari test input"
 
-          if [ "${{ github.event.inputs.RECOVERY }}" == "tes123" ]; then
-            echo "ini dari test123 input"
           else
             echo "gagal"
           fi
+
+          if [ "${{ github.event.inputs.RECOVERY }}" == "tes123" ]; then
+            echo "ini dari test input"
+            
+          else
+            echo "gagal"
+          fi
+
 
