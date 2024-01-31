@@ -9,6 +9,7 @@ on:
         options:
           - test
           - tes123
+          - hai
 
 jobs:
   build:
@@ -28,6 +29,9 @@ jobs:
               ;;
             "tes123")
               echo "ini dari tes123 input"
+              ;;
+            "hai")
+              echo "ini dari hai input"
               ;;
             *)
               echo "gagal"
