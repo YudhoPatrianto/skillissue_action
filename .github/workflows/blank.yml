@@ -1,0 +1,35 @@
+name: Build Recovery By YudhoPRJKT
+
+on:
+  workflow_dispatch:
+    inputs:
+      RECOVERY:
+      description: 'Choice '
+      type: choice
+      options:
+      - test
+      - tes123
+
+
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: test
+        run: |
+          df -h
+      
+      - name: test
+        run: |
+          if [ "${{ github.event.inputs.RECOVERY }}" == "test"];
+            echo ini dari test input
+          else
+            echo gagal
+          fi
+    
